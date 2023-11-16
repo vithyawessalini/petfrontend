@@ -1,0 +1,261 @@
+[
+    {
+        "id": 1,
+        "name": "Lucia",
+        "image": "https://www.hepper.com/wp-content/uploads/2021/11/golden-retriever_Shutterstock.jpg",
+        "description": "Lucia is a smart, loyal dog and is an ideal family companion.",
+        "breed": "Golden Retriever",
+        "gender": "Female",
+        "age": "1 year",
+        "color": "white",
+        "size": "Large"
+    },
+    {
+        "id": 2,
+        "name": "Rosy",
+        "image": "https://c4.wallpaperflare.com/wallpaper/152/448/854/dogs-labrador-retriever-baby-animal-dog-pet-hd-wallpaper-thumb.jpg",
+        "description": "Rosy is a good dog.",
+        "breed": "Labrador",
+        "gender": "Female",
+        "age": "5 months",
+        "color": "white",
+        "size": "Large"
+    },
+    {
+        "id": 3,
+        "name": "Charlie",
+        "image": "https://www.jammudogs.com/wp-content/uploads/2022/01/Shih-Tzu-1.jpg",
+        "description": "Charlie is a lovely dog.",
+        "breed": "Shih Tzu",
+        "gender": "Male",
+        "age": "2 years",
+        "color": "White and brown",
+        "size": "Small"
+    },
+    {
+        "id": 4,
+        "name": "Hitler",
+        "image": "https://cdn.pixabay.com/photo/2022/10/10/04/23/rottweiler-7510724_1280.jpg",
+        "description": "Hitler is a lovely dog.",
+        "breed": "Rotwheeler",
+        "gender": "Male",
+        "age": "3 years",
+        "color": "Black and brown",
+        "size": "Larger"
+    },
+    {
+        "id":5,
+        "name": "Max",
+        "image": "https://i.pinimg.com/originals/e0/2c/2c/e02c2cd4ff978750594b7be6fa85828e.jpg",
+        "description": " ",
+        "breed": "Rajapalayam",
+        "gender": "Male",
+        "age": "2 months",
+        "color": "White",
+        "size": "small"
+    },
+    {
+        "id":6 ,
+        "name": "Coco",
+        "image": "https://tailsbuddy.com/tbadmin/assets/images/indian-pariah-breed-overview.jpg",
+        "description": " ",
+        "breed": "Indian pariah",
+        "gender": "Male",
+        "age": "1 year",
+        "color": "Brown",
+        "size": "Large"
+    },
+    {
+        "id": 7,
+        "name": "Daisy",
+        "image": "https://thehappypuppysite.com/wp-content/uploads/2018/01/Toy-Poodle-HP-long.jpg",
+        "description": " ",
+        "breed": "Toy poodle",
+        "gender": "Female",
+        "age": "1 year",
+        "color": "Brown",
+        "size": "small"
+    },
+    {
+        "id": 8,
+        "name": "Rocky",
+        "image": "https://iheartdogs.com/wp-content/uploads/2023/05/dog-1037702_1280-1.jpg",
+        "description": " ",
+        "breed": "Maltese",
+        "gender": "Male",
+        "age": "9 months",
+        "color": "White",
+        "size": ""
+    }
+    ,{
+        "id": 9,
+        "name": "Lola",
+        "image": "https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk2NzIzMTQ2NzMxMTAzMjUw/11-dogs-like-german-shepherd.png",
+        "description": " ",
+        "breed": "German Shepherd",
+        "gender": "Female",
+        "age": "1.5 years",
+        "color": "Black and brown",
+        "size": "large"
+    }
+    ,{
+        "id": 10,
+        "name": "Teddy",
+        "image": "https://www.hepper.com/wp-content/uploads/2023/02/pomeranian-dog-in-the-park_Oksamutnaya_Shutterstock.jpg",
+        "description": " ",
+        "breed": "Pomeranian",
+        "gender": "Female",
+        "age": "5 months",
+        "color": "Cream",
+        "size": "Small"
+    }
+    ,{
+        "id": 11,
+        "name": "Keeto",
+        "image": "https://wallpapers.com/images/hd/white-teacup-poodle-on-grass-cpahlge2fj11dxzo.jpg",
+        "description": " ",
+        "breed": "Toy poodle",
+        "gender": "Male",
+        "age": "2 months",
+        "color": "white",
+        "size": "small"
+    }
+    ,{
+        "id": 12,
+        "name": "Mirabel",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSalfXuOLNhAkGOo2PtspzyOcrkAofn-w9Ujw&usqp=CAU",
+        "description": " ",
+        "breed": "Husky",
+        "gender": "Female",
+        "age": "9 months",
+        "color": "White",
+        "size": "Large"
+    }
+    ,{
+        "id": 13,
+        "name": "Zoe",
+        "image": "https://img-mm.manoramaonline.com/content/dam/mm/mo/karshakasree/pets-world/images/2021/1/11/kanni-dog-breed.jpg",
+        "description": " ",
+        "breed": "Kanni",
+        "gender": "Male",
+        "age": "2.5 years",
+        "color": "Black",
+        "size": "Large"
+    }
+    ,{
+        "id": 14,
+        "name": "Cooper",
+        "image": "https://media-be.chewy.com/wp-content/uploads/2021/04/16140537/Boxer_Feature-Image-1024x615.jpg",
+        "description": " ",
+        "breed": "Boxer",
+        "gender": "Male",
+        "age": "1.7 years",
+        "color": "Brown",
+        "size": "Large"
+    }
+    ,{
+        "id": 15,
+        "name": "Duke",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv_4D7cgVMEh9HUSQXtY3XX4xfs3PK51UoIQ&usqp=CAU",
+        "description": " ",
+        "breed": "Boxer",
+        "gender": "Male",
+        "age": "1.2 years",
+        "color": "Black",
+        "size": "Large"
+    }
+    ,{
+        "id": 16,
+        "name": "Granger",
+        "image": "https://hachi.dog/wp-content/uploads/2022/10/Chippiparai-Kutta-The-Super-dog-breed-of-India_Source-www.Hachi_.dog_4.jpg",
+        "description": " ",
+        "breed": "Chippiparai",
+        "gender": "Female",
+        "age": "1.7 years",
+        "color": "Cream",
+        "size": "Large"
+    }
+    ,{
+        "id": 17,
+        "name": "Navy",
+        "image": "https://i.pinimg.com/736x/68/f1/ba/68f1ba8620ccca633345aa51cc432539.jpg",
+        "description": " ",
+        "breed": "Toy poodle",
+        "gender": "Female",
+        "age": "3 months",
+        "color": "Brown",
+        "size": "Small"
+    },{
+        "id": 18,
+        "name": "Collie",
+        "image": "https://www.ukpets.com/oc-content/uploads/breeds/0/7263.jpg",
+        "description": " ",
+        "breed": "Golden Retriever",
+        "gender": "Female",
+        "age": "2 years",
+        "color": "Brown",
+        "size": "Large"
+    },{
+        "id": 19,
+        "name": "Nora",
+        "image": "https://png.pngtree.com/thumb_back/fw800/background/20230421/pngtree-cute-beagle-pup-standing-on-log-in-the-woods-image_2483204.jpg",
+        "description": " ",
+        "breed": "Beagle",
+        "gender": "Female",
+        "age": "7 months",
+        "color": "White and brown",
+        "size": "Small"
+    },{
+        "id": 20,
+        "name": "Sylvia",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL_H5joe8KwMnK1XIPobP2TvPv8y2sTvDe6Q&usqp=CAU",
+        "description": " ",
+        "breed": "Pomeranian",
+        "gender": "Female",
+        "age": "1 year",
+        "color": "Brown",
+        "size": "Small"
+    },{
+        "id": 21,
+        "name": "Donna",
+        "image": "https://media.istockphoto.com/id/1316582288/photo/beautiful-portrait-dog-breed-border-collie-on-the-brown-ground-with-his-stick.jpg?s=612x612&w=0&k=20&c=ooG_iGxq7CNl6QtValNDoPH8UZXeBSngbIWDnV_2tT8=",
+        "description": " ",
+        "breed": "border collie",
+        "gender": "Female",
+        "age": "1 year",
+        "color": "Black",
+        "size": "Small"
+    },{
+        "id": 22,
+        "name": "Ivan",
+        "image": "https://cdn.shopify.com/s/files/1/1708/4041/files/custom_resized_Doberman_480x480.jpg?v=1668581507",
+        "description": " ",
+        "breed": "Doberman",
+        "gender": "Female",
+        "age": "1 year",
+        "color": "Black",
+        "size": "Large"
+    }
+    ,{
+        "id": 23,
+        "name": "Cleo",
+        "image": "https://i.insider.com/64d76e371f51cc001968516e?width=700",
+        "description": " ",
+        "breed": "Great Dane",
+        "gender": "Male",
+        "age": "4 years",
+        "color": "Black",
+        "size": "Large"
+    }
+    ,{
+        "id": 24,
+        "name": "Coral",
+        "image": "https://www.hepper.com/wp-content/uploads/2023/02/a-white-pomeranian-dog-happily-standing-outside_Tam-and-Trace-Photography_Shutterstock.jpg",
+        "description": " ",
+        "breed": "Pomeranian",
+        "gender": "Male",
+        "age": "5 months",
+        "color": "white",
+        "size": "small"
+    }
+]
