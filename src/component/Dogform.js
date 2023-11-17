@@ -1,130 +1,94 @@
-import React, { Component } from 'react';
-import './Samp.css';
-class SignupForm extends Component {
-  render() {
-    return (
-      <div className="signup-container">
-        <div className="left-container">
-          <h1>
-            <i className="fas fa-paw"></i>
-            PUPASSURE
-          </h1>
-          <div className="puppy">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png" alt="Puppy" />
-          </div>
-        </div>
-        <div className="right-container">
-          <header>
-            <h1>Yay, puppies! Ensure your pup gets the best care!</h1>
-            <div className="set">
-              <div className="pets-name">
-                <label htmlFor="pets-name">Name</label>
-                <input id="pets-name" placeholder="Pet's name" type="text" />
-              </div>
-              <div className="pets-photo">
-                <button id="pets-upload">
-                  <i className="fas fa-camera-retro"></i>
-                </button>
-                <label htmlFor="pets-upload">Upload a photo</label>
-              </div>
-            </div>
-            <div className="set">
-              <div className="pets-breed">
-                <label htmlFor="pets-breed">Breed</label>
-                <input id="pets-breed" placeholder="Pet's breed" type="text" />
-              </div>
-              <div className="pets-birthday">
-                <label htmlFor="pets-birthday">Birthday</label>
-                <input id="pets-birthday" placeholder="MM/DD/YYYY" type="text" />
-              </div>
-            </div>
-            <div className="set">
-              <div className="pets-gender">
-                <label>Gender</label>
-                <div className="radio-container">
-                  <input
-                    checked
-                    id="pet-gender-female"
-                    name="pet-gender"
-                    type="radio"
-                    value="female"
-                  />
-                  <label htmlFor="pet-gender-female">Female</label>
-                  <input
-                    id="pet-gender-male"
-                    name="pet-gender"
-                    type="radio"
-                    value="male"
-                  />
-                  <label htmlFor="pet-gender-male">Male</label>
-                </div>
-              </div>
-              <div className="pets-spayed-neutered">
-                <label>Spayed or Neutered</label>
-                <div className="radio-container">
-                  <input
-                    checked
-                    id="pet-spayed"
-                    name="spayed-neutered"
-                    type="radio"
-                    value="spayed"
-                  />
-                  <label htmlFor="pet-spayed">Spayed</label>
-                  <input
-                    id="pet-neutered"
-                    name="spayed-neutered"
-                    type="radio"
-                    value="neutered"
-                  />
-                  <label htmlFor="pet-neutered">Neutered</label>
-                </div>
-              </div>
-            </div>
-            <div className="pets-weight">
-              <label>Weight</label>
-              <div className="radio-container">
-                <input
-                  checked
-                  id="pet-weight-0-25"
-                  name="pet-weight"
-                  type="radio"
-                  value="0-25"
-                />
-                <label htmlFor="pet-weight-0-25">0-25 lbs</label>
-                <input
-                  id="pet-weight-25-50"
-                  name="pet-weight"
-                  type="radio"
-                  value="25-50"
-                />
-                <label htmlFor="pet-weight-25-50">25-50 lbs</label>
-                <input
-                  id="pet-weight-50-100"
-                  name="pet-weight"
-                  type="radio"
-                  value="50-100"
-                />
-                <label htmlFor="pet-weight-50-100">50-100 lbs</label>
-                <input
-                  id="pet-weight-100-plus"
-                  name="pet-weight"
-                  type="radio"
-                  value="100+"
-                />
-                <label htmlFor="pet-weight-100-plus">100+ lbs</label>
-              </div>
-            </div>
-          </header>
-          <footer>
-            <div className="set">
-              <button id="back">Back</button>
-              <button id="next">Next</button>
-            </div>
-          </footer>
+import React from 'react';
+import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const Carousel = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    style: { overflow: 'hidden' },
+    appendDots: dots => (
+      <div style={{ 
+        position: 'absolute',
+        bottom: '10px',
+        width: '100%',
+        textAlign: 'center',
+        zIndex: 2, /* Ensure dots are above the image */
+      }}>
+        <ul style={{ padding: 0, margin: 0 }}>
+          {dots}
+        </ul>
+      </div>
+    ),
+  };
+  return (
+    <Slider {...settings}>
+      <div>
+        <img
+          src="https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-kalu-copy-2.jpg"
+          alt="Image 1"
+          style={{ width: '100%', height: '600px' }}
+        />
+        <div className="carousel-text">
+          <h2>A BETTER LIFE FOR INDIA’S STRAY ANIMALS</h2>
+          <p>Stray animals roam the streets of India without food, veterinary care or refuge from the elements. Help us give them a chance.</p>
+          <Link to="/donate">
+          <button>Donate</button>
+        </Link>&emsp;&emsp;
+        <Link to="/adopt">
+          <button>Adopt</button>
+        </Link>
         </div>
       </div>
-    );
-  }
-}
+      <div>
+        <img
+          src="https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/6Y9A0029-copy.jpeg"
+          alt="Image 1"
+          style={{ width: '100%', height: '600px' }}
+        />
+        <div className="carousel-text">
+          <h2>HOUSING, CARE & MORE FOR INDIA'S MOST VULNERABLE</h2>
+          <p>CARE works alongside India’s local shelters to rescue, rehabilitate, vaccinate, and house<br></br> these strays in need.</p>
+          <Link to="/volunform">
+          <button>Volunteer</button>
+        </Link>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-Wcows-copy-1.jpg"
+          alt="Image 2"
+          style={{ width: '100%', height: '600px' }}
+        />
+        <div className="carousel-text">
+          <h2>PUP TRAVELED 11900 MILES TO HIS FOREVER HOME</h2>
+          <p>Kala has the coolest shoes. (And, well, he’s a dog, so you know this is going<br></br> to be interesting!)</p>
+          <Link to="/passive">
+          <button>Passive adoption</button>
+        </Link>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://strayanimalfoundationindia.org/wp-content/uploads/2023/04/Wizardop-website.jpg"
+          alt="Image 3"
+          style={{ width: '100%', height: '600px' }}
+        />
+        <div className="carousel-text">
+          <h2>Rescue</h2>
+          <p>Sick, injured, or abandoned animals are rescued by HAS every day, and if any cruelty has been done, it can be reported</p>
+          <button>Click Me</button>
+        </div>
+      </div>
+    </Slider>
+  );
+};
 
-export default SignupForm;
+export default Carousel;

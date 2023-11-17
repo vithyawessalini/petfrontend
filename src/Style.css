@@ -1184,5 +1184,59 @@ hr {
   background: #ccc;
   margin: 10px 0;
 }
+/* Add this CSS to your global styles or component-specific styles */
 
-/* Add more styling as needed */
+.carousel {
+  position: relative;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Set text color */
+  z-index: 1; /* Ensure text is above the image */
+}
+
+.carousel-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.carousel-text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.carousel-text button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db; /* Set button background color */
+  color: #fff; /* Set button text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-text button:hover {
+  background-color: #2980b9; /* Change button background color on hover */
+}
+
+/* Add the following styles to adjust text positions on each slide */
+.slide1 .carousel-text {
+  top: 20%;
+}
+
+.slide2 .carousel-text {
+  top: 50%;
+}
+
+.slide3 .carousel-text {
+  top: 20%;
+}
+
+.slide4 .carousel-text {
+  top: 50%;
+}
