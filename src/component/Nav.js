@@ -8,7 +8,7 @@ const Navbar = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('/getprofile', {
+      fetch('/getProfile', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
