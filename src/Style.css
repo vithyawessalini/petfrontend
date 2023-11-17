@@ -1184,59 +1184,46 @@ hr {
   background: #ccc;
   margin: 10px 0;
 }
-/* Add this CSS to your global styles or component-specific styles */
 
-.carousel {
+.carousel-item {
+  position: relative;
+  
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+.carousel-container {
   position: relative;
 }
 
 .carousel-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 80px;
+  color: white;
   text-align: center;
-  color: #fff; /* Set text color */
-  z-index: 1; /* Ensure text is above the image */
+  background-color: rgba(0, 0, 0, 0.1);
+ 
+  padding: 20px;
+  font-size: 30px;
 }
 
-.carousel-text h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.carousel-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 20px;
+  font-size: 30px;
+  align-items: center;
+  margin: 0;
 }
-
-.carousel-text p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.carousel-text button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #3498db; /* Set button background color */
-  color: #fff; /* Set button text color */
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.carousel-text button:hover {
-  background-color: #2980b9; /* Change button background color on hover */
-}
-
-/* Add the following styles to adjust text positions on each slide */
-.slide1 .carousel-text {
-  top: 20%;
-}
-
-.slide2 .carousel-text {
-  top: 50%;
-}
-
-.slide3 .carousel-text {
-  top: 20%;
-}
-
-.slide4 .carousel-text {
-  top: 50%;
+.Home-page{
+  overflow-x: hidden;
 }

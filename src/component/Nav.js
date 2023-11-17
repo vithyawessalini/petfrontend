@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { Link } from 'react-router-dom'; // If you are using React Router
-
+import { BASE_URL } from '../config';
 const Navbar = () => {
   const [user, setUser] = useState(null);
 
@@ -8,7 +8,7 @@ const Navbar = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('/getProfile', {
+      fetch(`${ BASE_URL }/getprofile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -73,14 +73,16 @@ const Navbar = () => {
                 alt="Login"
               />
               <span className="tooltiptext">Login</span>  
-              {user && (<div >
-              <span className="tooltiptext">Logout</span> 
-              </div>
-              )}
+              {user && (
+            <div>
+          
+              <span className="tooltiptext">Logout</span>  
+            
+          </div>)}
             </Link>
             
           </li>
-         
+          
           <li>
         
           <Link to="/profile" className="tooltip">

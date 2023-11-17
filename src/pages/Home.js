@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const HomePage = () => {
+const Home = () => {
    
   const [rescue, setrescue] = useState(0);
   const [adopted, setAdopted] = useState(0);
@@ -60,98 +60,67 @@ const HomePage = () => {
       clearInterval(timer); // Cleanup the timer when the component unmounts
     };
   }, [volunteers, vstopAt, vincrementStep]);
-  const settings = {
+  const carouselItems = [
+    {
+      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-kalu-copy-2.jpg',
+      text: 'A BETTER LIFE FOR INDIA’S STRAY ANIMALS',
+	text1:'Stray animals roam the streets of India without food, veterinary care or refuge from the elements. Help us give them a chance.',
+button:'Donate',link:'/donate',link1:'/adopt',
+button1:'Adopt',
+    },
+    
+    {
+      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/6Y9A0029-copy.jpeg',
+      text: 'HOUSING, CARE & MORE FOR INDIAS MOST VULNERABLE',
+text1:'CARE works alongside India’s local shelters to rescue, rehabilitate, vaccinate, and house these strays in need.',
+button:'Volunteer',link:'/volunteer',link1:'/donate',
+button1:'Donate'
+
+    },
+    {
+      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-Wcows-copy-1.jpg',
+      text: 'PUP TRAVELED 11900 MILES TO HIS FOREVER HOME',
+text1:'Kala has the coolest shoes. (And, well, he’s a dog, so you know this is going     to be interesting!)',
+button:'Passive adoption',link:'/passive',link1:'/adopt',
+button1:'Adopt'
+
+    },
+    {
+      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2023/04/Wizardop-website.jpg',
+      text: 'Rescue',
+text1:'Sick, injured, or abandoned animals are rescued by HAS every day, and if any cruelty has been done, it can be reported',
+button:'Rescue',link:'/rescue',link1:'/cruelty',
+button1:'Cruelty',
+    },
+  ];
+
+  const carouselSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    style: { overflow: 'hidden' },
-    appendDots: dots => (
-      <div style={{ 
-        position: 'absolute',
-        bottom: '10px',
-        width: '100%',
-        textAlign: 'center',
-        zIndex: 2, 
-      }}>
-        <ul style={{ padding: 0, margin: 0 }}>
-          {dots}
-        </ul>
-      </div>
-    ),
+    autoplay: true,      
+    autoplaySpeed: 1000, 
   };
-  const sliderStyle = {
-    margin: '0', // Set margin to zero
-  };
+ 
   return (
-    <div className="home-page">
+    <div className="Home-page">
         <Navbar/>
         <br></br><br></br><br></br>
         
         <hr></hr>
-        <Slider style={sliderStyle} {...settings}>
-      <div className='slide1'>
-        <img
-          src="https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-kalu-copy-2.jpg"
-          alt="Image 1"
-          style={{ width: '100%', height: '600px' }}
-        />
-        <div className="carousel-text"style={{ position: 'absolute', top: 0, left: 0, height: '100%', display: 'flex', alignItems: 'center', paddingLeft: '400px', paddingTop: '50px' }}>
-          <h2>A BETTER LIFE FOR INDIA’S STRAY ANIMALS</h2>
-          <p>Stray animals roam the streets of India without food, veterinary care or refuge from the elements. Help us give them a chance.</p>
-          <Link to="/donate">
-          <button>Donate</button>
-        </Link>&emsp;&emsp;
-        <Link to="/adopt">
-          <button>Adopt</button>
-        </Link>
-        </div>
-      </div>
-      <div className='slide2'>
-        <img
-          src="https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/6Y9A0029-copy.jpeg"
-          alt="Image 1"
-          style={{ width: '100%', height: '600px' }}
-        />
-        
-        <div className="carousel-text">
-          <h2>HOUSING, CARE & MORE FOR INDIA'S MOST VULNERABLE</h2>
-          <p>CARE works alongside India’s local shelters to rescue, rehabilitate, vaccinate, and house<br></br> these strays in need.</p>
-          <Link to="/volunform">
-          <button>Volunteer</button>
-        </Link>
-        </div>
-      </div>
-      <div className='slide3'>
-        <img
-          src="https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-Wcows-copy-1.jpg"
-          alt="Image 2"
-          style={{ width: '100%', height: '600px' }}
-        />
-        <div className="carousel-text">
-          <h2>PUP TRAVELED 11900 MILES TO HIS FOREVER HOME</h2>
-          <p>Kala has the coolest shoes. (And, well, he’s a dog, so you know this is going<br></br> to be interesting!)</p>
-          <Link to="/passive">
-          <button>Passive adoption</button>
-        </Link>
-        </div>
-      </div>
-      <div className='slide4'>
-        <img
-          src="https://strayanimalfoundationindia.org/wp-content/uploads/2023/04/Wizardop-website.jpg"
-          alt="Image 3"
-          style={{ width: '100%', height: '600px' }}
-        />
-        <div className="carousel-text">
-          <h2>Rescue</h2>
-          <p>Sick, injured, or abandoned animals are rescued by HAS every day, and if any cruelty has been done, it can be reported</p>
-          <button>Click Me</button>
-        </div>
-      </div>
-    </Slider>
+        <Slider {...carouselSettings}>
+        {carouselItems.map((item, index) => (
+          <div key={index} className="carousel-item">
+            <img src={item.image} alt={`Service ${index + 1}`} />
+            <div className="carousel-text">{item.text}<br/>{item.text1}</div>
+		<div className="carousel-button">
+<button>{item.button}</button>&emsp;<button>{item.button1}</button>
+</div>
+          </div>
+        ))}
+      </Slider>
     <div>
        <img src='https://strayanimalfoundationindia.org/wp-content/uploads/2022/06/80Millionstraya.png.webp'style={{width:'210px'}}></img>
        <img src='https://strayanimalfoundationindia.org/wp-content/uploads/2022/06/62millionstraydogs.png.webp'style={{width:'210px'}}></img>
@@ -261,4 +230,4 @@ The inspiration behind the trust, is 15 year old Charlie, a differently abled, 3
     </div>
   );
 };
-export default HomePage;
+export default Home;
