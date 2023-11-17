@@ -80,7 +80,7 @@ const Navbar = () => {
             </Link>
             
           </li>
-          {user && (<div >
+         
           <li>
         
           <Link to="/profile" className="tooltip">
@@ -93,7 +93,7 @@ const Navbar = () => {
               <span className="tooltiptext">Profile</span> 
             </Link>
           </li>
-          </div>)}
+          
           {user && (
           <li className="nav-item">
           
