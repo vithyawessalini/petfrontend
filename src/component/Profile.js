@@ -26,31 +26,31 @@ function Profile() {
   const imageContainerStyle = {
     display: 'flex',
     justifyContent: 'center',     
-    paddingTop:'100px' ,
+    paddingTop:'50px' ,
   };
 
   return (
     <div className="app">
       <div className="app-main">
         <Navbar />
+        <div className='app9'>
         <div className="profile">
           <div className="profile-header">
             <div className="profile-info">
             <div style={imageContainerStyle}>
               <img
                 className="profile-picture"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOH2aZnIHWjMQj2lQUOWIL2f4Hljgab0ecZQ&usqp=CAU"
+                src="https://e7.pngegg.com/pngimages/798/436/png-clipart-computer-icons-user-profile-avatar-profile-heroes-black.png"
                 alt="Profile"
+                
               />
             </div>
             {user && (
                 
         <div>
           
-       <br></br>
               <p className="profile-h" style={{fontFamily: "Footlight MT Light",textAlign:'center',fontSize:'30px',fontWeight:'bolder'}}>PROFILE</p>
-              <br></br>
-              <hr/><br></br>
+              <hr/>
               <p className="profile-other"style={{textAlign:'center'}}>Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.name}</p>
               <hr />
             
@@ -68,7 +68,7 @@ function Profile() {
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 }
 

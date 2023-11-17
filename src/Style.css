@@ -1114,4 +1114,75 @@ select {
   padding-top: 10px;
   margin-left: 20px; /* Adjust the margin as needed */
   font-size: 20px;
+}/* Add these styles to your existing CSS file or create a new one */
+.app9 {
+  position: relative;
+  padding-top: 120px;
 }
+
+.app9::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 800px; /* Adjust the padding as needed */
+  background-image: url('https://cdn3.vectorstock.com/i/1000x1000/41/07/abstract-pastel-gradient-background-vector-30134107.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Place the background behind the content */
+}
+
+.profile {
+  background: linear-gradient( #e7c2c9, #ffffff);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  margin-top: 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.profile-h {
+  font-family: "Footlight MT Light";
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.profile-other {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 10px 0;
+}
+
+/* Add more styling as needed */

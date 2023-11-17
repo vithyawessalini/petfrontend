@@ -72,11 +72,17 @@ const Navbar = () => {
                 className="login-icon"
                 alt="Login"
               />
-              {/* <span className="tooltiptext">Login</span>  */}
+              <span className="tooltiptext">Login</span>  
+              {user && (<div >
+              <span className="tooltiptext">Logout</span> 
+              </div>
+              )}
             </Link>
+            
           </li>
-          
+          {user && (<div >
           <li>
+        
           <Link to="/profile" className="tooltip">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOnPAaq91xDOeIxxT9lMloWMnI28uSVjdANj1ksh4qbXb_gpDNZScToiVO32F9l__UD8&usqp=CAU"
@@ -87,13 +93,16 @@ const Navbar = () => {
               <span className="tooltiptext">Profile</span> 
             </Link>
           </li>
-          <li className="nav-item">
+          </div>)}
           {user && (
+          <li className="nav-item">
+          
         <div >
-          <p style={{color:'maroon',fontWeight:'bolder'}}>{user.name}</p>
+          <p style={{color:'maroon',fontWeight:'bolder'}}>Hi {user.name}!</p>
           </div>
-      )}
+     
           </li>
+          )}
         </ul>
         
       </div>
