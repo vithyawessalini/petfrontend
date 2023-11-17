@@ -95,6 +95,7 @@ const Navbar = () => {
           </li>
           
           {user && (
+            <div>
           <li className="nav-item">
           
         <div >
@@ -102,7 +103,7 @@ const Navbar = () => {
           </div>
      
           </li>
-          )}
+          </div>)}
         </ul>
         
       </div>
