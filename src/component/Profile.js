@@ -47,7 +47,7 @@ function Profile() {
               <hr/>
               <p className="profile-other"style={{textAlign:'center'}}>Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.name}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
               <hr />
-              <p className="profile-other"style={{textAlign:'center'}}>Email&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.email}</p>
+              <p className="profile-other"style={{textAlign:'center'}}>Email&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.email}</p>
               <hr />
               <p className="profile-other"style={{textAlign:'center'}}>Contact number&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{user.contactNumber}&emsp;&emsp;&nbsp;&nbsp;</p>
               <hr />
