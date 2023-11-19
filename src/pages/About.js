@@ -46,9 +46,7 @@ const AboutUs = () => {
         </p>
       </div>
       <Team />
-     
     </div>
   );
 };
-
 export default AboutUs;

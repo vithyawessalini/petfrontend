@@ -1,19 +1,15 @@
 import React, { useState ,useEffect} from 'react';
-import './Samp.css'; // Import your form styles
+import './Samp.css';  
 import Swal from 'sweetalert2';
 import {BASE_URL} from '../config';
 function Adoptform() {
   const [step, setStep] = useState(1);
-
-
   const nextStep = () => {
     setStep(step + 1);
   };
-
   const previousStep = () => {
     setStep(step - 1);
   };
-
   const [formData, setFormData] = useState({
     name:'',
     dateOfBirth:'',
@@ -38,11 +34,9 @@ function Adoptform() {
     callBackTime:'',
     agreement: false
   });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
-
         !formData.name||
         !formData.dateOfBirth||
         !formData.gender||
@@ -103,55 +97,40 @@ function Adoptform() {
     }
   }
 };
-
 const handleInputChange = (e) => {
   const { name, value, type, checked } = e.target;
-
-  // Handle checkboxes separately
   if (type === 'checkbox') {
     setFormData({
       ...formData,
       [name]: checked,
     });
   } else {
-    // Handle other input types
     setFormData({
       ...formData,
       [name]: value,
     });
   }
 };
-
   const [setOtherReason] = useState('');
- 
-
-
   useEffect(() => {
-    // Set the background color for the body element
-    document.body.style.backgroundColor = '#f0f0f0'; // Light gray background color
-
-    // Don't forget to reset it when the component unmounts
+    document.body.style.backgroundColor = '#f0f0f0'; 
     return () => {
-      document.body.style.backgroundColor = ''; // Reset the background color
+      document.body.style.backgroundColor = ''; 
     };
-  }, []); // The empty dependency array ensures this effect runs only once when the component mounts
+  }, []); 
   const handleInputChange1 = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
-
-  
     if (name === 'reasonForAdopting' && value !== 'Other') {
       setOtherReason('');
     }
   };
-  
   return (
     <div className="container3">
     <form id="msform">
-      {/* Add progress bar */}
       <ul id="progressbar" style={{ textAlign: 'center'  }}>
           {[1, 2, 3].map((stepNumber) => (
             <li
@@ -159,11 +138,9 @@ const handleInputChange = (e) => {
               className={step === stepNumber ? 'active' : ''}
               onClick={() => setStep(stepNumber)}
             >
-              {/* {stepNumber} */}
             </li>
           ))}
         </ul>
-      {/* Render fieldsets based on the step */}
       {step === 1 && (
         <fieldset>
           <div className="form-group"><img
@@ -178,11 +155,8 @@ const handleInputChange = (e) => {
           name="name"
           value={formData.name}
           onChange={handleInputChange}
-          
         />
       </div>
-
-      {/* Date of Birth */}
       <div className="form-group">
         <label htmlFor="dateOfBirth">Date of Birth *</label>
         <input
@@ -191,11 +165,8 @@ const handleInputChange = (e) => {
           name="dateOfBirth"
           value={formData.dateOfBirth}
           onChange={handleInputChange}
-          
         />
       </div>
-
-      {/* Gender */}
       <div className="form-group">
         <label htmlFor="gender">Gender *</label>
         <div className="radio-group">
@@ -206,10 +177,8 @@ const handleInputChange = (e) => {
             value="Male"
             checked={formData.gender === 'Male'}
             onChange={handleInputChange}
-            
           />
           <label htmlFor="male">Male</label>
-
           <input
             type="radio"
             id="female"
@@ -217,13 +186,10 @@ const handleInputChange = (e) => {
             value="Female"
             checked={formData.gender === 'Female'}
             onChange={handleInputChange}
-            
           />
           <label htmlFor="female">Female</label>
         </div>
       </div>
-
-      {/* Occupation */}
       <div className="form-group">
         <label htmlFor="occupation">Occupation *</label>
         <input
@@ -232,11 +198,8 @@ const handleInputChange = (e) => {
           name="occupation"
           value={formData.occupation}
           onChange={handleInputChange}
-          
         />
       </div>
-
-      {/* Address (FULL POSTAL ADDRESS) */}
       <div className="form-group">
         <label htmlFor="address">Address (FULL POSTAL ADDRESS) *</label>
         <input
@@ -245,11 +208,8 @@ const handleInputChange = (e) => {
           name="address"
           value={formData.address}
           onChange={handleInputChange}
-          
         />
       </div>
-
-      {/* Phone Number */}
       <div className="form-group">
         <label htmlFor="phoneNumber">Phone Number *</label>
         <input
@@ -258,11 +218,8 @@ const handleInputChange = (e) => {
           name="phoneNumber"
           value={formData.phoneNumber}
           onChange={handleInputChange}
-          
         />
       </div>
-
-      {/* Alternative Phone Number */}
       <div className="form-group">
         <label htmlFor="altPhoneNumber">Alternative Phone Number</label>
         <input
@@ -273,8 +230,6 @@ const handleInputChange = (e) => {
           onChange={handleInputChange}
         />
       </div>
-
-      {/* Email ID */}
       <div className="form-group">
         <label htmlFor="email">Email ID *</label>
         <input
@@ -283,7 +238,6 @@ const handleInputChange = (e) => {
           name="email"
           value={formData.email}
           onChange={handleInputChange}
-          
         />
       </div>
             <input
@@ -314,10 +268,8 @@ const handleInputChange = (e) => {
             value="dog"
             checked={formData.dog === 'dog'}
             onChange={handleInputChange}
-            
           />
           <label htmlFor="dog">Dog</label>
-
           <input
             type="radio"
             id="puppy"
@@ -325,7 +277,6 @@ const handleInputChange = (e) => {
             value="puppy"
             checked={formData.dog === 'puppy'}
             onChange={handleInputChange}
-            
           />
           <label htmlFor="puppy">Puppy</label>
         </div>
@@ -356,7 +307,6 @@ const handleInputChange = (e) => {
     <option value="Farm">For a Farm</option>
   </select>
 </div>
-
 <div className="form-group">
   <label>4. Are you living with *</label>
   <div className="radio-group">
@@ -367,10 +317,8 @@ const handleInputChange = (e) => {
       value="Family"
       checked={formData.livingWith === 'Family'}
       onChange={handleInputChange}
-      
     />
     <label htmlFor="family">Family</label>
-
     <input
       type="radio"
       id="friendsRoommates"
@@ -378,7 +326,6 @@ const handleInputChange = (e) => {
       value="Friends/ Roommates"
       checked={formData.livingWith === 'Friends/ Roommates'}
       onChange={handleInputChange}
-      
     />
     <label htmlFor="friendsRoommates">Friends/ Roommates (Go to question 6)</label>
 <br/>
@@ -389,10 +336,8 @@ const handleInputChange = (e) => {
       value="Alone"
       checked={formData.livingWith === 'Alone'}
       onChange={handleInputChange}
-      
     />
     <label htmlFor="alone">Alone (Go to question 6)</label>
-
     <input
       type="radio"
       id="otherLivingArrangement"
@@ -400,10 +345,8 @@ const handleInputChange = (e) => {
       value="Other"
       checked={formData.livingWith === 'Other'}
       onChange={handleInputChange}
-      
     />
      <label htmlFor="otherLivingArrangement">Other:</label>
-
 {formData.livingWith === 'Other' && (
   <input
     type="text"
@@ -415,7 +358,6 @@ const handleInputChange = (e) => {
 )}
   </div>
 </div>
-
 <div className="form-group">
   <label htmlFor="familyMembers">5 A. How many members are there in your family? *</label>
   <input
@@ -423,11 +365,9 @@ const handleInputChange = (e) => {
     id="familyMembers"
     name="familyMembers"
     value={formData.familyMembers}
-    onChange={handleInputChange}
-    
+    onChange={handleInputChange}    
   />
 </div>
-
 <div className="form-group">
   <label>5 B. Are there any children below 13 years? *</label>
   <div className="radio-group">
@@ -437,24 +377,20 @@ const handleInputChange = (e) => {
       name="childrenBelow13"
       value="Yes"
       checked={formData.childrenBelow13 === 'Yes'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="childrenYes">Yes</label>
-
     <input
       type="radio"
       id="childrenNo"
       name="childrenBelow13"
       value="No"
       checked={formData.childrenBelow13 === 'No'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}      
     />
     <label htmlFor="childrenNo">No</label>
   </div>
 </div>
-
 <div className="form-group">
   <label>6. Is everyone you live with comfortable with the decision of having pets at home? *</label>
   <div className="radio-group">
@@ -464,36 +400,29 @@ const handleInputChange = (e) => {
       name="comfortableWithPets"
       value="Yes"
       checked={formData.comfortableWithPets === 'Yes'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}      
     />
     <label htmlFor="comfortableYes">Yes</label>
-
     <input
       type="radio"
       id="comfortableNo"
       name="comfortableWithPets"
       value="No"
       checked={formData.comfortableWithPets === 'No'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="comfortableNo">No</label>
-
     <input
       type="radio"
       id="comfortableMaybe"
       name="comfortableWithPets"
       value="Maybe"
       checked={formData.comfortableWithPets === 'Maybe'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}      
     />
     <label htmlFor="comfortableMaybe">Maybe</label>
   </div>
 </div>
-
-
 <div className="form-group">
   <label>7. House Type *</label>
   <div className="radio-group">
@@ -503,30 +432,25 @@ const handleInputChange = (e) => {
       name="houseType"
       value="Independent"
       checked={formData.houseType === 'Independent'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="independent">Independent</label>
-
     <input
       type="radio"
       id="apartment"
       name="houseType"
       value="Apartment"
       checked={formData.houseType === 'Apartment'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="apartment">Apartment</label>
-
     <input
       type="radio"
       id="otherHouseType"
       name="houseType"
       value="Other"
       checked={formData.houseType === 'Other'}
-      onChange={handleInputChange}
-      
+            onChange={handleInputChange}
     />
     <label htmlFor="otherHouseType">Other:</label>
   </div>
@@ -549,7 +473,6 @@ const handleInputChange = (e) => {
         )}
         {step === 3 && (
           <fieldset>
-           
 <div className="form-group">
   <label>8. House Ownership *</label>
   <div className="radio-group">
@@ -560,34 +483,28 @@ const handleInputChange = (e) => {
       value="Own"
       checked={formData.houseOwnership === 'Own'}
       onChange={handleInputChange}
-      
     />
     <label htmlFor="ownHouse">Own</label>
-
     <input
       type="radio"
       id="rentedHouse"
       name="houseOwnership"
       value="Rented"
       checked={formData.houseOwnership === 'Rented'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="rentedHouse">Rented</label>
-
     <input
       type="radio"
       id="otherOwnership"
       name="houseOwnership"
       value="Other"
       checked={formData.houseOwnership === 'Other'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="otherOwnership">Other:</label>
   </div>
 </div>
-
 <div className="form-group">
   <label>8 A. If not owned, have you informed & received the approval of the owner. *</label>
   <div className="radio-group">
@@ -597,30 +514,25 @@ const handleInputChange = (e) => {
       name="ownerApproval"
       value="Yes"
       checked={formData.ownerApproval === 'Yes'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="approvalYes">Yes</label>
-
     <input
       type="radio"
       id="approvalNo"
       name="ownerApproval"
       value="No"
       checked={formData.ownerApproval === 'No'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}      
     />
     <label htmlFor="approvalNo">No</label>
-
     <input
       type="radio"
       id="approvalNotApplicable"
       name="ownerApproval"
       value="Not Applicable (Own)"
       checked={formData.ownerApproval === 'Not Applicable (Own)'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}      
     />
     <label htmlFor="approvalNotApplicable">Not Applicable (Own)</label>
   </div>
@@ -635,7 +547,6 @@ const handleInputChange = (e) => {
     onChange={handleInputChange}
   />
 </div>
-
 <div className="form-group">
   <label>9 . Are you a first-time pet owner? *</label>
   <div className="radio-group">
@@ -645,25 +556,20 @@ const handleInputChange = (e) => {
       name="firstTimePetOwner"
       value="Yes (Go to 10 A)"
       checked={formData.firstTimePetOwner === 'Yes (Go to 10 A)'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="firstTimePetOwnerYes">Yes </label>
-
     <input
       type="radio"
       id="firstTimePetOwnerNo"
       name="firstTimePetOwner"
       value="No"
       checked={formData.firstTimePetOwner === 'No'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}     
     />
     <label htmlFor="firstTimePetOwnerNo">No</label>
   </div>
 </div>
-
-
 <div className="form-group">
   <label>10. Would you be willing to have your house checked (Physical/virtual) in advance of adopting a pet? *</label>
   <div className="radio-group">
@@ -674,18 +580,15 @@ const handleInputChange = (e) => {
       value="Yes"
       checked={formData.houseCheck === 'Yes'}
       onChange={handleInputChange}
-      
     />
     <label htmlFor="houseCheckYes">Yes</label>
-
     <input
       type="radio"
       id="houseCheckNo"
       name="houseCheck"
       value="No"
       checked={formData.houseCheck === 'No'}
-      onChange={handleInputChange}
-      
+      onChange={handleInputChange}  
     />
     <label htmlFor="houseCheckNo">No</label>
   </div>

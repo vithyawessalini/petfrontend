@@ -104,15 +104,14 @@ const Signup = () => {
         });
 
         if (response.ok) {
-          // Registration successful, now navigate based on userType
           navigate('/login');
         } else {
           const data = await response.json();
-          console.error(data); // Log the error response to the console
+          console.error(data); 
           Swal.fire('An error occurred during registration','','error');
         }
       } catch (error) {
-        console.error(error); // Log any unhandled exceptions to the console
+        console.error(error); 
         Swal.fire('An error occurred during registration','','error');
       }
     }

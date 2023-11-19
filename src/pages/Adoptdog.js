@@ -1,22 +1,18 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './adopt.css';
 import dogs from '../json/dog.json';
 import Navbar from '../component/Nav';
 import 'font-awesome/css/font-awesome.min.css';
-
 function Adoptdog() {
   const [selectedDog, setSelectedDog] = useState(null);
   const [filter, setFilter] = useState('');
-  const [filterBy, setFilterBy] = useState(''); // New state for filter criteria
+  const [filterBy, setFilterBy] = useState(''); 
   const [filteredDogs, setFilteredDogs] = useState(dogs);
-  const [selectedGender, setSelectedGender] = useState(''); // New state for gender filter
-
+  const [selectedGender, setSelectedGender] = useState(''); 
   const handleProfileLinkClick = (dog) => {
     setSelectedDog(dog);
   };
-
   useEffect(() => {
     setFilteredDogs(
       dogs.filter((dog) => {
@@ -26,14 +22,11 @@ function Adoptdog() {
           (filterBy === 'breed' && dog.breed.toLowerCase().includes(filter.toLowerCase())) ||
           (filterBy === 'id' && dog.id.toString().includes(filter))
         ) &&
-        (selectedGender === '' || dog.gender === selectedGender) // Apply gender filter
+        (selectedGender === '' || dog.gender === selectedGender)  
       })
     );
-  }, [filter, filterBy, selectedGender]); // Include filterBy in the dependencies array
-  
-
+  }, [filter, filterBy, selectedGender]); 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
   const toggleSearchBar = () => {
     setIsSearchOpen(!isSearchOpen);
   };
@@ -46,7 +39,6 @@ function Adoptdog() {
           style={{ height: "100px" }}
           alt="Petfinder Logo"
         />
-       
         <div class='container' tabindex='1'>
       <div class='search-container' tabindex='1'>
       {isSearchOpen && (
@@ -58,11 +50,8 @@ function Adoptdog() {
          <a className="button" onClick={toggleSearchBar}>
           <i class='fa fa-search'></i>
         </a>
-       
-
       </div>
     </div>
-    
     <div className="filter-section">
           <div className="gender-filter">
             <select value={filterBy} onChange={(e) => setFilterBy(e.target.value)}>
@@ -81,10 +70,8 @@ function Adoptdog() {
           </div>
         </div>
       </div>
-
       <div style={{ paddingLeft: '70px', paddingRight: '70px' }}>
         <div className="side_wrapper1">
-          
         {filteredDogs.length === 0 ? (
   <p>No pets match for your search criteria.</p>
 ) : (filteredDogs.map((dog, index) => (
@@ -99,7 +86,6 @@ function Adoptdog() {
                 </header>
                 <div className="profile-card_about">
                   <h2>All About {dog.name}</h2>
-
                   <footer className="profile-card_footer">
                     <div className="social-row">
                       <div className="paw-icon" title="Gets Along Well With Other Animals">
@@ -155,5 +141,4 @@ function Adoptdog() {
     </div>
   );
 }
-
 export default Adoptdog;

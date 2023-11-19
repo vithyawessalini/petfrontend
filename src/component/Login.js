@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -8,15 +7,12 @@ const Login = () => {
   const [name, setname] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
   const handleLogin = async (e) => {
     e.preventDefault();
-
     if (!name || !password) {
-      Swal.fire('Please fill in all fields','','warning'); // Show an alert instead of using the error state
+      Swal.fire('Please fill in all fields','','warning'); 
       return;
     }
-
     try {
       const response = await fetch(`${ BASE_URL }/login`, {
         method: 'POST',
@@ -25,21 +21,19 @@ const Login = () => {
         },
         body: JSON.stringify({ name, password }),
       });
-
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('token', data.token);
         Swal.fire('Logged in Successfully','','success');
         navigate('/');
       } else {
-        Swal.fire('Invalid username or password','','error'); // Show an alert for errors
+        Swal.fire('Invalid username or password','','error'); 
       }
     } catch (error) {
       console.error('Error:', error);
-      Swal.fire('An error occurred during login.','','error'); // Show an alert for errors
+      Swal.fire('An error occurred during login.','','error'); 
     }
   };
-
   const containerStyle1 = {
     backgroundColor: '#9a616d',
     minHeight: '100vh',
@@ -47,21 +41,18 @@ const Login = () => {
     justifyContent: 'center',
     alignItems: 'center',
   };
-
   const cardStyle1 = {
     borderRadius: '1rem',
     display: 'flex',
     flexDirection: 'row',
     overflow: 'hidden',
   };
-
   const imageStyle1 = {
     height: '530px',
     width: '500px',
     borderRadius: '1rem 0 0 1rem',
     
   };
-
   const formStyle1 = {
     display: 'flex',
     flexDirection: 'column',
@@ -69,7 +60,6 @@ const Login = () => {
     padding: '4rem 2rem',
     color: 'black',
   };
-  
   const boxStyle1 = {
     border: '1px solid #ccc',
     borderRadius: '1rem',
@@ -79,7 +69,6 @@ const Login = () => {
     width:'900px',
     height:'500px'
   };
-
   const inputStyle1 = {
     marginBottom: '1rem',
     width: '73%',
@@ -88,7 +77,6 @@ const Login = () => {
     border: '1px solid black',
     borderRadius: '0.25rem',
   };
-  
   const buttonStyle1 = {
     width: '80%',
     padding: '1rem',
@@ -99,7 +87,6 @@ const Login = () => {
     border: 'none',
     cursor: 'pointer',
   };
-
   return (
     <div style={containerStyle1}>
     <div style={boxStyle1}>
@@ -159,5 +146,4 @@ const Login = () => {
     </div></div>
   );
 };
-
 export default Login;

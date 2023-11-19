@@ -4,8 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 const Activity = () => {
   const location = useLocation();
-
-
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
@@ -156,7 +154,6 @@ const Activity = () => {
         <p style={{ textAlign: "center" ,fontSize:'20px'}}>Let’s make Tamilnadu safer for animals together.</p>
        <Link to="/volunteer"><button style={{ width: "200px" }}>Get Started</button></Link> 
       </div>
-   
     </div>
     );
 };

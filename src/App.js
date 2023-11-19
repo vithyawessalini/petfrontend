@@ -13,7 +13,6 @@ import CrueltyForm from './component/Crueltyform';
 import RescueForm from './component/Rescueform';
 import Passive from './pages/Passive';
 import AdoptionForm from './component/AdoptionForm';
-import AdminSignupForm from './component/Adminform';
 import AdoptDog from './pages/Adoptdog';
 import MultiStepForm from './component/Samp';
 import Dogform from './component/Dogform';
@@ -46,7 +45,6 @@ function App() {
         <Route path="/rescueform" element={<RescueForm/>}/>
         <Route path="/passiveadopt" element={<Passive/>}/>
         <Route path='/adoptform' element={<AdoptionForm/>}/>
-        <Route path='/asign' element={<AdminSignupForm/>}/>
         <Route path='/adoptdog' element={<AdoptDog/>}/>
         <Route path='/samp' element={<MultiStepForm/>}/>
         <Route path='/dog' element={<Dogform/>}/>

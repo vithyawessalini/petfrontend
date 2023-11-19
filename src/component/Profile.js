@@ -4,9 +4,7 @@ import { BASE_URL } from '../config';
 import { useState ,useEffect} from 'react';
 function Profile() {
   const [user, setUser] = useState(null);
-
   useEffect(() => {
-    // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
       fetch(`${ BASE_URL }/getprofile`, {
@@ -28,7 +26,6 @@ function Profile() {
     justifyContent: 'center',     
     paddingTop:'50px' ,
   };
-
   return (
     <div className="app">
       <div className="app-main">
@@ -42,34 +39,24 @@ function Profile() {
                 className="profile-picture"
                 src="https://e7.pngegg.com/pngimages/798/436/png-clipart-computer-icons-user-profile-avatar-profile-heroes-black.png"
                 alt="Profile"
-                
               />
             </div>
             {user && (
-                
-        <div>
-          
+            <div>
               <p className="profile-h" style={{fontFamily: "Footlight MT Light",textAlign:'center',fontSize:'30px',fontWeight:'bolder'}}>PROFILE</p>
               <hr/>
-              <p className="profile-other"style={{textAlign:'center'}}>Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.name}</p>
+              <p className="profile-other"style={{textAlign:'center'}}>Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.name}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
               <hr />
-            
-              <p className="profile-other"style={{textAlign:'center'}}>Email&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.email}</p>
+              <p className="profile-other"style={{textAlign:'center'}}>Email&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {user.email}</p>
               <hr />
-              <p className="profile-other"style={{textAlign:'center'}}>Contact number&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; {user.contactNumber}</p>
+              <p className="profile-other"style={{textAlign:'center'}}>Contact number&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{user.contactNumber}&emsp;&emsp;&nbsp;&nbsp;</p>
               <hr />
-              
-             
-              </div>
-      )}
+              </div> )}
             </div>
-
-          
           </div>
         </div>
       </div>
     </div></div>
   );
 }
-
 export default Profile;

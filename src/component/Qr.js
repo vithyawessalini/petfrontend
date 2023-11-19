@@ -92,7 +92,7 @@ const Qr = () => {
     <div
       className="donation-page"
       style={{
-        backgroundImage: 'url("https://static.vecteezy.com/system/resources/previews/000/464/040/original/vector-dog-seamless-pattern-theme-bone-paw-foot-print-for-use-as-wallpaper-or-background.jpg")',
+        backgroundImage: 'url("https://wallpaperaccess.com/full/1707695.jpg")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

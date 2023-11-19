@@ -5,9 +5,9 @@ import Contact from '../component/Contactus';
 const ReportCase = () => {
   
   const [count, setCount] = useState(10);
-  const stopAt = 1000; // Change this value to set the stopping point
-  const incrementStep = 1; // Change this value to set the increment step
-  const intervalDelay = 100; // Change this value to set the delay between increments (in milliseconds)
+  const stopAt = 1000;  
+  const incrementStep = 1; 
+  const intervalDelay = 100; 
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -19,7 +19,7 @@ const ReportCase = () => {
     }, intervalDelay);
 
     return () => {
-      clearInterval(timer); // Cleanup the timer when the component unmounts
+      clearInterval(timer); 
     };
   }, [count, stopAt, incrementStep]);
 

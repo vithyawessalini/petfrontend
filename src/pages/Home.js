@@ -5,15 +5,13 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 const Home = () => {
-   
   const [rescue, setrescue] = useState(0);
   const [adopted, setAdopted] = useState(0);
   const [volunteers, setVolunteers] = useState(0);
-  const stopAt = 15000; // Change this value to set the stopping point
-  const incrementStep = 50; // Change this value to set the increment step
-  const intervalDelay = 5; // Change this value to set the delay between increments (in milliseconds)
+  const stopAt = 15000;  
+  const incrementStep = 50;  
+  const intervalDelay = 5;  
   const astopAt = 3000; 
   const aincrementStep = 50;  
   const aintervalDelay = 30;  
@@ -28,7 +26,6 @@ const Home = () => {
         clearInterval(timer);
       }
     }, intervalDelay);
-
     return () => {
       clearInterval(timer); // Cleanup the timer when the component unmounts
     };
@@ -41,12 +38,10 @@ const Home = () => {
         clearInterval(timer);
       }
     }, aintervalDelay);
-
     return () => {
       clearInterval(timer); // Cleanup the timer when the component unmounts
     };
   }, [adopted, astopAt, aincrementStep]);
-
   useEffect(() => {
     const timer = setInterval(() => {
       if (volunteers < vstopAt) {
@@ -55,7 +50,6 @@ const Home = () => {
         clearInterval(timer);
       }
     }, vintervalDelay);
-
     return () => {
       clearInterval(timer); // Cleanup the timer when the component unmounts
     };
@@ -64,36 +58,32 @@ const Home = () => {
     {
       image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-kalu-copy-2.jpg',
       text: 'A BETTER LIFE FOR INDIA’S STRAY ANIMALS',
-	text1:'Stray animals roam the streets of India without food, veterinary care or refuge from the elements. Help us give them a chance.',
-button:'Donate',link:'/donate',link1:'/adopt',
-button1:'Adopt',
+	    text1:'Stray animals roam the streets of India without food, veterinary care or refuge from the elements. Help us give them a chance.',
+      button:'Donate',link:'/donate',link1:'/adoptform',
+      button1:'Adopt',
     },
-    
     {
       image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/6Y9A0029-copy.jpeg',
       text: 'HOUSING, CARE & MORE FOR INDIAS MOST VULNERABLE',
-text1:'CARE works alongside India’s local shelters to rescue, rehabilitate, vaccinate, and house these strays in need.',
-button:'Volunteer',link:'/volunteer',link1:'/donate',
-button1:'Donate'
-
+      text1:'CARE works alongside India’s local shelters to rescue, rehabilitate, vaccinate, and house these strays in need.',
+      button:'Volunteer',link:'/volunteer',link1:'/donate',
+      button1:'Donate'
     },
     {
       image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-Wcows-copy-1.jpg',
       text: 'PUP TRAVELED 11900 MILES TO HIS FOREVER HOME',
-text1:'Kala has the coolest shoes. (And, well, he’s a dog, so you know this is going     to be interesting!)',
-button:'Passive adoption',link:'/passive',link1:'/adopt',
-button1:'Adopt'
-
+      text1:'Kala has the coolest shoes. (And, well, he’s a dog, so you know this is going     to be interesting!)',
+      button:'Passive adoption',link:'/passiveadopt',link1:'/adoptform',
+      button1:'Adopt'
     },
     {
       image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2023/04/Wizardop-website.jpg',
       text: 'Rescue',
-text1:'Sick, injured, or abandoned animals are rescued by HAS every day, and if any cruelty has been done, it can be reported',
-button:'Rescue',link:'/rescue',link1:'/cruelty',
-button1:'Cruelty',
+      text1:'Sick, injured, or abandoned animals are rescued by HAS every day, and if any cruelty has been done, it can be reported',
+      button:'Rescue',link:'/rescue',link1:'/cruelty',
+      button1:'Cruelty',
     },
   ];
-
   const carouselSettings = {
     dots: true,
     infinite: true,
@@ -103,25 +93,29 @@ button1:'Cruelty',
     autoplay: true,      
     autoplaySpeed: 1000, 
   };
- 
   return (
     <div className="Home-page">
         <Navbar/>
         <br></br><br></br><br></br>
-        
         <hr></hr>
         <Slider {...carouselSettings}>
         {carouselItems.map((item, index) => (
           <div key={index} className="carousel-item">
             <img src={item.image} alt={`Service ${index + 1}`} />
             <div className="carousel-text">{item.text}<br/>{item.text1}</div>
-		<div className="carousel-button">
-<button>{item.button}</button>&emsp;<button>{item.button1}</button>
-</div>
+            <div className="carousel-button">
+            <Link to={item.button}>
+            <button>{item.button}</button>
+            </Link>
+            &emsp;
+            <Link to={item.button1}>
+            <button>{item.button1}</button>
+            </Link>
+            </div>
           </div>
         ))}
       </Slider>
-    <div>
+    <div><br></br><br></br>
        <img src='https://strayanimalfoundationindia.org/wp-content/uploads/2022/06/80Millionstraya.png.webp'style={{width:'210px'}}></img>
        <img src='https://strayanimalfoundationindia.org/wp-content/uploads/2022/06/62millionstraydogs.png.webp'style={{width:'210px'}}></img>
         <img src='https://strayanimalfoundationindia.org/wp-content/uploads/2022/06/9millionstraycats.png.webp'style={{width:'210px'}}></img>
@@ -133,9 +127,9 @@ button1:'Cruelty',
         <div className="hero-text">
           <h1 style={{fontFamily:"sans-serif",fontSize:"45px"}}>In Memory of Charlie</h1>
           <p style={{fontSize:'18px',color:'black', lineHeight: '1.5'}}>Charlies Animal Rescue Centre – CARE is an animal shelter established in January 2013, with the aim of providing timely medical aid to injured and ill animals of the street. <br></br>
-No animal left behind is our motto. <br></br>
-CARE is also home to many dogs,cats, rabbits,ducks, hens, pigs, guinea pigs, birds and terrapins. <br></br>
-The inspiration behind the trust, is 15 year old Charlie, a differently abled, 3 legged Indian Dog who was an established figure in the field of canine therapy since 2005.</p>
+            No animal left behind is our motto. <br></br>
+            CARE is also home to many dogs,cats, rabbits,ducks, hens, pigs, guinea pigs, birds and terrapins. <br></br>
+            The inspiration behind the trust, is 15 year old Charlie, a differently abled, 3 legged Indian Dog who was an established figure in the field of canine therapy since 2005.</p>
         </div>
         <div className="hero-image"><br></br>
           <img src="https://i0.wp.com/charlies-care.com/wp-content/uploads/2017/04/charlie-png.png?w=1389&ssl=1" alt="Charlie" />
@@ -193,7 +187,6 @@ The inspiration behind the trust, is 15 year old Charlie, a differently abled, 3
           <Link to={`/activity#activity-community`}>Learn More</Link>
         </div></div>
       </section>
-      
       <section className="statistics">
         <div className="stats-container">
           <div className="stat">
@@ -223,9 +216,7 @@ The inspiration behind the trust, is 15 year old Charlie, a differently abled, 3
             <p style={{ fontSize: '18px' }}>Volunteer</p>
           </div>
         </div>
-        
       </section>
-      
      <Contact/>
     </div>
   );

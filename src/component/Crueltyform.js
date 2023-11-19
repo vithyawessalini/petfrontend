@@ -10,24 +10,20 @@ const CrueltyForm = () => {
     location: '',
     file: null,
   });
-
   const nameInputRef = useRef();
   const phoneNumberInputRef = useRef();
   const emailInputRef = useRef();
   const descriptionInputRef = useRef();
   const fileInputRef = useRef();
   const locationInputRef = useRef();
-
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
     const fieldValue = type === 'file' ? (files && files.length > 0 ? files[0] : null) : value;
-
     setFormData({
       ...formData,
       [name]: fieldValue,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -48,7 +44,6 @@ const CrueltyForm = () => {
         formDataToSend.append('phoneNumber', formData.phoneNumber);
         formDataToSend.append('description', formData.description);
         formDataToSend.append('location', formData.location);
-
         const response = await fetch(`${ BASE_URL }/cform`, {
           method: 'POST',
           body: formDataToSend,
@@ -79,7 +74,6 @@ const CrueltyForm = () => {
       }
     }
   };
-
   return (
     <div className='cruel' style={{ paddingLeft: '630px' }}>
       <div className="cruelty-form-container">
@@ -175,5 +169,4 @@ const CrueltyForm = () => {
     </div>
   );
 };
-
 export default CrueltyForm;

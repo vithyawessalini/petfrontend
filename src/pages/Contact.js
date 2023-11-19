@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../component/Nav";
-
 const Contactpage = () => {
   return (
     <div className="about-us" style={{ position: 'relative', width: '1263px', height: '100%' }}>
@@ -13,7 +12,6 @@ const Contactpage = () => {
       />
       <br />
       <h2 style={{ color: '#266b5e', fontSize: '30px', fontFamily: 'Roboto Slab', textAlign: 'center' }}>CONTACT US</h2>
-
       <div className="contact-container">
         <div className="contact-left">
         <div className="card1">
@@ -23,9 +21,7 @@ const Contactpage = () => {
             <textarea placeholder="Your Message"></textarea>
             <button>Send</button>
           </div>
-         
         </div>
-
         <div className="contact-right">
         <div className="card1">
             <h3>Address</h3>
@@ -39,12 +35,10 @@ const Contactpage = () => {
               Tamilnadu, 560064
             </p>
           </div>
-
           <div className="card1">
             <h3>Rescue Center Timings</h3>
             <p>9:30am – 5:30pm</p>
           </div>
-
           <div className="card1">
             <h3>Business Hours</h3>
             <p>Monday-Friday: 9:00 AM - 5:00 PM</p>
@@ -56,5 +50,4 @@ const Contactpage = () => {
     </div>
   );
 }
-
 export default Contactpage;
