@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/" className="nav-link">
+            <Link to="/home" className="nav-link">
               Home
             </Link>
           </li>
@@ -63,14 +63,14 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-          <Link to="/login" className="tooltip">
+          <Link to="/" className="tooltip">
               <img
                 src="https://cdn.icon-icons.com/icons2/368/PNG/512/Login_37128.png"
                 style={{ width: '30px' }}
                 className="login-icon"
                 alt="Login"
               />
-             <span className="tooltiptext">{user ? 'Logout' : 'Login'}</span>
+             <span className="tooltiptext">Logout</span>
             </Link>
           </li>
           {user && (<div>

@@ -25,7 +25,7 @@ const Login = () => {
         const data = await response.json();
         localStorage.setItem('token', data.token);
         Swal.fire('Logged in Successfully','','success');
-        navigate('/');
+        navigate('/home');
       } else {
         Swal.fire('Invalid username or password','','error'); 
       }

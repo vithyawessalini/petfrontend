@@ -20,6 +20,13 @@ import Login from './component/Login';
 import Signup from './component/Signup';
 import Qr from './component/Qr';
 import Profile from './component/Profile';
+import Fabout from './pages/Fabout';
+import Factivity from './pages/Factivity';
+import Fadoptdog from './pages/Fadoptdog';
+import Fcontact from './pages/Fcontact';
+import Fdonate from './pages/Fdonate';
+import Fhome from './pages/Fhome';
+import FreportCase from './pages/Freportcase';
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -33,12 +40,18 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Fhome />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/fabout" element={<Fabout />} />
         <Route path="/activity" element={<Activity/>}/>
+        <Route path="/factivity" element={<Factivity/>}/>
         <Route path="/donate" element={<Donate/>}/>
+        <Route path="/fdonate" element={<Fdonate/>}/>
         <Route path="/report" element={<ReportCase/>}/>
+        <Route path="/freport" element={<FreportCase/>}/>
         <Route path="/contact" element={<Contactpage/>}/>
+        <Route path="/fcontact" element={<Fcontact/>}/>
         <Route path="/passive" element={<PassiveAdoption/>}/>
         <Route path="/volunteer" element={<VolunteerForm/>}/>
         <Route path="/crueltyform" element={<CrueltyForm/>}/>
@@ -46,6 +59,7 @@ function App() {
         <Route path="/passiveadopt" element={<Passive/>}/>
         <Route path='/adoptform' element={<AdoptionForm/>}/>
         <Route path='/adoptdog' element={<AdoptDog/>}/>
+        <Route path='/fadoptdog' element={<Fadoptdog/>}/>
         <Route path='/samp' element={<MultiStepForm/>}/>
         <Route path='/dog' element={<Dogform/>}/>
         <Route path='/login' element={<Login/>}/>
