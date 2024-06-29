@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import image from "../image/hydro.jpg";
+import image1 from '../image/image1.jpg';
+import image2 from '../image/image2.jpeg';
+import image3 from '../image/image3.jpg';
+import image4 from '../image/image4.jpg';
 const Home = () => {
   const [rescue, setrescue] = useState(0);
   const [adopted, setAdopted] = useState(0);
@@ -56,28 +61,28 @@ const Home = () => {
   }, [volunteers, vstopAt, vincrementStep]);
   const carouselItems = [
     {
-      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-kalu-copy-2.jpg',
+      image: image1,
       text: 'A BETTER LIFE FOR INDIA’S STRAY ANIMALS',
 	    text1:'Stray animals roam the streets of India without food, veterinary care or refuge from the elements. Help us give them a chance.',
       button:'Donate',link:'/donate',link1:'/adoptform',
       button1:'Adopt',
     },
     {
-      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/6Y9A0029-copy.jpeg',
+      image: image2,
       text: 'HOUSING, CARE & MORE FOR INDIAS MOST VULNERABLE',
       text1:'CARE works alongside India’s local shelters to rescue, rehabilitate, vaccinate, and house these strays in need.',
       button:'Volunteer',link:'/volunteer',link1:'/donate',
       button1:'Donate'
     },
     {
-      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2022/08/Uj-Wcows-copy-1.jpg',
+      image: image3,
       text: 'PUP TRAVELED 11900 MILES TO HIS FOREVER HOME',
       text1:'Kala has the coolest shoes. (And, well, he’s a dog, so you know this is going     to be interesting!)',
       button:'Passive adoption',link:'/passiveadopt',link1:'/adoptform',
       button1:'Adopt'
     },
     {
-      image: 'https://strayanimalfoundationindia.org/wp-content/uploads/2023/04/Wizardop-website.jpg',
+      image: image4,
       text: 'Rescue',
       text1:'Sick, injured, or abandoned animals are rescued by HAS every day, and if any cruelty has been done, it can be reported',
       button:'Rescue',link:'/rescue',link1:'/cruelty',
@@ -175,7 +180,7 @@ const Home = () => {
           <Link to={'/passive'}>Learn More</Link>
         </div>
         <div className="service-card">
-            <img src='https://www.beachdogaquatherapy.com/uploads/2/7/6/1/27615957/published/img-5985.jpeg?1656698407'alt='imagee'></img>
+            <img src={image}alt='hydro'></img>
           <h3>CARE Hydrotherapy</h3>
           <p style={{ fontSize: '16px',fontFamily: "Footlight MT Light" }}>Hydrotherapy for paraplegic and accident cases</p>
           <Link to={`/activity`}>Learn More</Link>

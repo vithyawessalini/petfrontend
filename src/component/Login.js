@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { BASE_URL } from '../config';
+import image from "../image/login.jpg";
 const Login = () => {
   const [name, setname] = useState('');
   const [password, setPassword] = useState('');
@@ -93,7 +94,7 @@ const Login = () => {
       <div  style={cardStyle1}>
         <div className="col-md-6 col-lg-7 d-none d-md-block">
           <img
-            src="https://www.aplusapets.com/cdn/shop/articles/girl-with-dog.png?v=1632251023"
+            src={image}
             alt="login form"
             className="img-fluid"
             style={imageStyle1}

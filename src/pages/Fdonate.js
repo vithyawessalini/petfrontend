@@ -2,10 +2,11 @@ import React,{useState} from "react";
 import Navbar from '../component/fnav';
 import image from "../image/qr.jpeg";
 import { Link } from 'react-router-dom';
+import visit from '../image/visit.jpeg'
 const Fdonate=()=>{
     const [Activity] = useState([
         {
-            imgsr:'https://i.ytimg.com/vi/zdLrPL52hE4/maxresdefault.jpg',
+            imgsr: visit,
             title:'Visit Us',
             text:'Take a tour of the shelter and spend time with our permanent residents.Please note: MONDAY’S HOLIDAY'
         },
