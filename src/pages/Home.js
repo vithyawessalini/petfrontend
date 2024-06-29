@@ -85,7 +85,7 @@ const Home = () => {
       image: image4,
       text: 'Rescue',
       text1:'Sick, injured, or abandoned animals are rescued by HAS every day, and if any cruelty has been done, it can be reported',
-      button:'Rescue',link:'/rescue',link1:'/cruelty',
+      button:'Rescue',link:'/rescueform',link1:'/crueltyform',
       button1:'Cruelty',
     },
   ];
@@ -109,11 +109,11 @@ const Home = () => {
             <img src={item.image} alt={`Service ${index + 1}`} />
             <div className="carousel-text">{item.text}<br/>{item.text1}</div>
             <div className="carousel-button">
-            <Link to={item.button}>
+            <Link to={item.link}>
             <button>{item.button}</button>
             </Link>
             &emsp;
-            <Link to={item.button1}>
+            <Link to={item.link1}>
             <button>{item.button1}</button>
             </Link>
             </div>
